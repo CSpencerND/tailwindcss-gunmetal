@@ -1,0 +1,31 @@
+{
+    "name": "@tailwindcss-gunmetal/shadcn",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsup"
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "tailwindcss",
+        "plugin",
+        "shadcn"
+    ],
+    "author": "cspencernd",
+    "license": "MIT",
+    "devDependencies": {
+        "@k-vyn/coloralgorithm": "^1.0.0",
+        "@types/node": "^20.12.12",
+        "tsup": "^8.0.2",
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "tailwindcss": "^3.4.3",
+        "tailwindcss-gunmetal": "^1.0.0",
+        "tailwindcss-shadcn-ui": "^0.2.0"
+    }
+}
