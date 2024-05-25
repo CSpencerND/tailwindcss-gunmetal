@@ -91,31 +91,31 @@ var shadcn_default = plugin2(
     theme: {
       extend: {
         colors: {
-          background: "rgb(var(--background))",
-          foreground: "rgb(var(--foreground))",
+          background: "rgb(var(--background) / <alpha-value>))",
+          foreground: "rgb(var(--foreground) / <alpha-value>))",
           card: {
-            DEFAULT: "rgb(var(--card))",
-            foreground: "rgb(var(--card-foreground))"
+            DEFAULT: "rgb(var(--card) / <alpha-value>))",
+            foreground: "rgb(var(--card-foreground) / <alpha-value>))"
           },
           popover: {
-            DEFAULT: "rgb(var(--popover))",
-            foreground: "rgb(var(--popover-foreground))"
+            DEFAULT: "rgb(var(--popover) / <alpha-value>))",
+            foreground: "rgb(var(--popover-foreground) / <alpha-value>))"
           },
           primary: {
-            DEFAULT: "rgb(var(--primary))",
-            foreground: "rgb(var(--primary-foreground))"
+            DEFAULT: "rgb(var(--primary) / <alpha-value>))",
+            foreground: "rgb(var(--primary-foreground) / <alpha-value>))"
           },
           secondary: {
-            DEFAULT: "rgb(var(--secondary))",
-            foreground: "rgb(var(--secondary-foreground))"
+            DEFAULT: "rgb(var(--secondary) / <alpha-value>))",
+            foreground: "rgb(var(--secondary-foreground) / <alpha-value>))"
           },
           muted: {
-            DEFAULT: "rgb(var(--muted))",
-            foreground: "rgb(var(--muted-foreground))"
+            DEFAULT: "rgb(var(--muted) / <alpha-value>))",
+            foreground: "rgb(var(--muted-foreground) / <alpha-value>))"
           },
           accent: {
-            DEFAULT: "rgb(var(--accent))",
-            foreground: "rgb(var(--accent-foreground))"
+            DEFAULT: "rgb(var(--accent) / <alpha-value>))",
+            foreground: "rgb(var(--accent-foreground) / <alpha-value>))"
           },
           destructive: {
             DEFAULT: rose[900],
@@ -125,9 +125,9 @@ var shadcn_default = plugin2(
             DEFAULT: yellow[900],
             foreground: yellow[100]
           },
-          border: "rgb(var(--border))",
-          input: "rgb(var(--input))",
-          ring: "rgb(var(--ring))"
+          border: "rgb(var(--border) / <alpha-value>))",
+          input: "rgb(var(--input) / <alpha-value>))",
+          ring: "rgb(var(--ring) / <alpha-value>))"
         }
       }
     }
@@ -135,5 +135,7 @@ var shadcn_default = plugin2(
 );
 export {
   colors_default as gunmetalColors,
+  hex as gunmetalHex,
+  rgb as gunmetalRgb,
   shadcn_default as gunmetalShadcn
 };

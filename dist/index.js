@@ -31,6 +31,8 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 __export(src_exports, {
   gunmetalColors: () => colors_default,
+  gunmetalHex: () => hex,
+  gunmetalRgb: () => rgb,
   gunmetalShadcn: () => shadcn_default
 });
 module.exports = __toCommonJS(src_exports);
@@ -128,31 +130,31 @@ var shadcn_default = (0, import_plugin2.default)(
     theme: {
       extend: {
         colors: {
-          background: "rgb(var(--background))",
-          foreground: "rgb(var(--foreground))",
+          background: "rgb(var(--background) / <alpha-value>))",
+          foreground: "rgb(var(--foreground) / <alpha-value>))",
           card: {
-            DEFAULT: "rgb(var(--card))",
-            foreground: "rgb(var(--card-foreground))"
+            DEFAULT: "rgb(var(--card) / <alpha-value>))",
+            foreground: "rgb(var(--card-foreground) / <alpha-value>))"
           },
           popover: {
-            DEFAULT: "rgb(var(--popover))",
-            foreground: "rgb(var(--popover-foreground))"
+            DEFAULT: "rgb(var(--popover) / <alpha-value>))",
+            foreground: "rgb(var(--popover-foreground) / <alpha-value>))"
           },
           primary: {
-            DEFAULT: "rgb(var(--primary))",
-            foreground: "rgb(var(--primary-foreground))"
+            DEFAULT: "rgb(var(--primary) / <alpha-value>))",
+            foreground: "rgb(var(--primary-foreground) / <alpha-value>))"
           },
           secondary: {
-            DEFAULT: "rgb(var(--secondary))",
-            foreground: "rgb(var(--secondary-foreground))"
+            DEFAULT: "rgb(var(--secondary) / <alpha-value>))",
+            foreground: "rgb(var(--secondary-foreground) / <alpha-value>))"
           },
           muted: {
-            DEFAULT: "rgb(var(--muted))",
-            foreground: "rgb(var(--muted-foreground))"
+            DEFAULT: "rgb(var(--muted) / <alpha-value>))",
+            foreground: "rgb(var(--muted-foreground) / <alpha-value>))"
           },
           accent: {
-            DEFAULT: "rgb(var(--accent))",
-            foreground: "rgb(var(--accent-foreground))"
+            DEFAULT: "rgb(var(--accent) / <alpha-value>))",
+            foreground: "rgb(var(--accent-foreground) / <alpha-value>))"
           },
           destructive: {
             DEFAULT: import_colors.rose[900],
@@ -162,9 +164,9 @@ var shadcn_default = (0, import_plugin2.default)(
             DEFAULT: import_colors.yellow[900],
             foreground: import_colors.yellow[100]
           },
-          border: "rgb(var(--border))",
-          input: "rgb(var(--input))",
-          ring: "rgb(var(--ring))"
+          border: "rgb(var(--border) / <alpha-value>))",
+          input: "rgb(var(--input) / <alpha-value>))",
+          ring: "rgb(var(--ring) / <alpha-value>))"
         }
       }
     }
@@ -173,5 +175,7 @@ var shadcn_default = (0, import_plugin2.default)(
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   gunmetalColors,
+  gunmetalHex,
+  gunmetalRgb,
   gunmetalShadcn
 });
