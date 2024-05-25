@@ -1,5 +1,5 @@
 {
-    "name": "tailwindcss-gunmetal",
+    "name": "@cspencernd/tailwindcss-gunmetal",
     "version": "1.0.3",
     "description": "gunmetal colorscheme for tailwindcss plus shadcn color config",
     "main": "dist/index.js",
