@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "tailwindcss": "^3.4.3",
-        "tailwindcss-gunmetal": "^1.0.0",
+        "tailwindcss-gunmetal": "workspace:*",
         "tailwindcss-shadcn-ui": "^0.2.0"
     }
 }
