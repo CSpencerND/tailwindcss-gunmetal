@@ -1,5 +1,5 @@
 {
-    "name": "@tailwindcss-gunmetal/shadcn",
+    "name": "tailwindcss-gunmetal/shadcn",
     "version": "1.0.0",
     "description": "",
     "main": "dist/index.js",
