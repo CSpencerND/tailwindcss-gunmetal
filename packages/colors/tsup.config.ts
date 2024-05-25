@@ -8,6 +8,6 @@ export default defineConfig([
         clean: true,
         dts: true,
         format: ["esm", "cjs"],
-        external: ["tailwindcss", "tailwindcss-shadcn-ui"],
+        external: ["tailwindcss"],
     },
 ]);

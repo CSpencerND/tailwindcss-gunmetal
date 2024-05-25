@@ -1,5 +1,5 @@
 {
-    "name": "@tailwindcss-gunmetal/shadcn",
+    "name": "@tailwindcss-gunmetal/colors",
     "version": "1.0.0",
     "description": "",
     "publishConfig": {
@@ -16,7 +16,7 @@
     "keywords": [
         "tailwindcss",
         "plugin",
-        "shadcn"
+        "colors"
     ],
     "author": "cspencernd",
     "license": "MIT",
@@ -27,8 +27,6 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
-        "tailwindcss": "^3.4.3",
-        "@tailwindcss-gunmetal/colors": "workspace:*",
-        "tailwindcss-shadcn-ui": "^0.2.0"
+        "tailwindcss": "^3.4.3"
     }
 }
