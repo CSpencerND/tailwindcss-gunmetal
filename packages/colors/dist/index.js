@@ -48,7 +48,8 @@ var colors = {
   900: "#1e222e",
   950: "#10121a"
 };
-var config = {
+var src_default = (0, import_plugin.default)(() => {
+}, {
   theme: {
     extend: {
       colors: {
@@ -56,9 +57,7 @@ var config = {
       }
     }
   }
-};
-var src_default = (0, import_plugin.default)(() => {
-}, config);
+});
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   colors

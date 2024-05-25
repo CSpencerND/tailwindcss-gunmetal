@@ -28,8 +28,8 @@ importers:
   packages/shadcn:
     dependencies:
       '@tailwindcss-gunmetal/colors':
-        specifier: ^1.0.2
-        version: 1.0.2
+        specifier: ^1.0.3
+        version: 1.0.3
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
@@ -312,8 +312,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@tailwindcss-gunmetal/colors@1.0.2':
-    resolution: {integrity: sha512-yy5zeFVCi6yYwQ8iAYJW0saS3xgAeC+3icYAhWUjaOPLKPya5uN0O2joSiCfVJpg7ApG0US8tggFcrx/FlQXkQ==}
+  '@tailwindcss-gunmetal/colors@1.0.3':
+    resolution: {integrity: sha512-9NVyIK38N+mV8SQigseWAYfNoUvFCONquOIQSUCSHARffQ4P9lvJZ6fv7bQuecWOuDJWIM31qwtpQ9Ri+cVlkQ==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1028,7 +1028,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
-  '@tailwindcss-gunmetal/colors@1.0.2':
+  '@tailwindcss-gunmetal/colors@1.0.3':
     dependencies:
       tailwindcss: 3.4.3
     transitivePeerDependencies:

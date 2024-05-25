@@ -13,7 +13,8 @@ var colors = {
   900: "#1e222e",
   950: "#10121a"
 };
-var config = {
+var src_default = plugin(() => {
+}, {
   theme: {
     extend: {
       colors: {
@@ -21,9 +22,7 @@ var config = {
       }
     }
   }
-};
-var src_default = plugin(() => {
-}, config);
+});
 export {
   colors,
   src_default as default

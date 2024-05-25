@@ -1,5 +1,4 @@
 import plugin from "tailwindcss/plugin";
-import type { Config } from "tailwindcss";
 
 export const colors = {
     50: "#d8dee3",
@@ -15,7 +14,7 @@ export const colors = {
     950: "#10121a",
 };
 
-const config: Partial<Config> = {
+export default plugin(() => { }, {
     theme: {
         extend: {
             colors: {
@@ -23,6 +22,4 @@ const config: Partial<Config> = {
             },
         },
     },
-};
-
-export default plugin(() => { }, config);
+});
