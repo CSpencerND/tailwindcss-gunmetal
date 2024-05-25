@@ -1,8 +1,6 @@
 // TODO: Turn this file into a plugin so you can export css variables as well as class names
 import { rose } from "tailwindcss/colors";
-// import gunmetal from "@tailwindcss-gunmetal/colors";
-
-console.log("nothing");
+import { colors } from "@tailwindcss-gunmetal/colors";
 
 // type Colors = {
 //     gunmetal: {

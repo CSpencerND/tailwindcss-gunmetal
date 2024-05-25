@@ -30,29 +30,36 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
+  colors: () => colors,
   default: () => src_default
 });
 module.exports = __toCommonJS(src_exports);
 var import_plugin = __toESM(require("tailwindcss/plugin"));
-var src_default = (0, import_plugin.default)(() => {
-}, {
+var colors = {
+  50: "#d8dee3",
+  100: "#bec7cf",
+  200: "#a5b0bb",
+  300: "#8e99a7",
+  400: "#788392",
+  500: "#646e7e",
+  600: "#50596a",
+  700: "#3e4656",
+  800: "#2e3342",
+  900: "#1e222e",
+  950: "#10121a"
+};
+var config = {
   theme: {
     extend: {
       colors: {
-        gunmetal: {
-          50: "#d8dee3",
-          100: "#bec7cf",
-          200: "#a5b0bb",
-          300: "#8e99a7",
-          400: "#788392",
-          500: "#646e7e",
-          600: "#50596a",
-          700: "#3e4656",
-          800: "#2e3342",
-          900: "#1e222e",
-          950: "#10121a"
-        }
+        gunmetal: colors
       }
     }
   }
+};
+var src_default = (0, import_plugin.default)(() => {
+}, config);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  colors
 });
