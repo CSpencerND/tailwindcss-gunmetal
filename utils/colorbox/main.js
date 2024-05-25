@@ -1,11 +1,33 @@
-import fs from "node:fs";
-import colorgen from "@k-vyn/coloralgorithm";
-import config from "./config.json";
+const fs = require("node:fs");
+const colorgen = require("@k-vyn/coloralgorithm");
+const config = require("./config.json");
+const output = require("./output.json");
 
-const colors = colorgen.generate(config.properties, config.options);
-const json = JSON.stringify(colors, null, 4);
+function generate() {
+    const colors = colorgen.generate(config.properties, config.options);
+    return JSON.stringify(colors, null, 4);
+}
 
-fs.writeFile("output.json", json, (err) => {
-    if (err) console.log(err);
-    else console.log("done");
-});
+function writeOutputToFile() {
+    fs.writeFile("output.json", json, (err) => {
+        if (err) console.log(err);
+        else console.log("done");
+    });
+}
+
+function getHex() {
+    return output.colors.map((color) => color.hex);
+}
+
+function getRgb() {
+    return output.colors.map((color) =>
+        color.rgbString.replaceAll(",", " ")
+    );
+}
+
+function main() {
+    console.log(getHex());
+    console.log(getRgb());
+}
+
+// main();
