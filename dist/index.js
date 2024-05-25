@@ -30,29 +30,148 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var src_exports = {};
 __export(src_exports, {
-  default: () => src_default
+  gunmetalColors: () => colors_default,
+  gunmetalShadcn: () => shadcn_default
 });
 module.exports = __toCommonJS(src_exports);
+
+// src/colors.ts
 var import_plugin = __toESM(require("tailwindcss/plugin"));
-var src_default = (0, import_plugin.default)(() => {
+var hex = {
+  50: "#d8dee3",
+  100: "#bec7cf",
+  200: "#a5b0bb",
+  300: "#8e99a7",
+  400: "#788392",
+  500: "#646e7e",
+  600: "#50596a",
+  700: "#3e4656",
+  800: "#2e3342",
+  900: "#1e222e",
+  950: "#10121a"
+};
+var rgb = {
+  50: "216 222 227",
+  100: "190 199 207",
+  200: "165 176 187",
+  300: "142 153 167",
+  400: "120 131 146",
+  500: "100 110 126",
+  600: "80 89 106",
+  700: "62 70 86",
+  800: "46 51 66",
+  900: "30 34 46",
+  950: "16 18 25"
+};
+var colors_default = (0, import_plugin.default)(() => {
 }, {
   theme: {
     extend: {
       colors: {
-        gunmetal: {
-          50: "#d8dee3",
-          100: "#bec7cf",
-          200: "#a5b0bb",
-          300: "#8e99a7",
-          400: "#788392",
-          500: "#646e7e",
-          600: "#50596a",
-          700: "#3e4656",
-          800: "#2e3342",
-          900: "#1e222e",
-          950: "#10121a"
+        gunmetal: hex
+      }
+    }
+  }
+});
+
+// src/shadcn.ts
+var import_plugin2 = __toESM(require("tailwindcss/plugin"));
+var import_colors = require("tailwindcss/colors");
+var shadcn_default = (0, import_plugin2.default)(
+  ({ addBase }) => {
+    addBase({
+      ":root": {
+        "--background": rgb[950],
+        "--foreground": rgb[50],
+        "--card": rgb[950],
+        "--card-foreground": rgb[50],
+        "--popover": rgb[950],
+        "--popover-foreground": rgb[50],
+        "--primary": rgb[50],
+        "--primary-foreground": rgb[900],
+        "--secondary": rgb[800],
+        "--secondary-foreground": rgb[50],
+        "--muted": rgb[800],
+        "--muted-foreground": rgb[400],
+        "--accent": rgb[800],
+        "--accent-foreground": rgb[50],
+        "--destructive": import_colors.rose[900],
+        "--destructive-foreground": import_colors.rose[100],
+        "--border": rgb[800],
+        "--input": rgb[800],
+        "--ring": rgb[300]
+      },
+      ".dark": {
+        "--background": rgb[950],
+        "--foreground": rgb[50],
+        "--card": rgb[950],
+        "--card-foreground": rgb[50],
+        "--popover": rgb[950],
+        "--popover-foreground": rgb[50],
+        "--primary": rgb[50],
+        "--primary-foreground": rgb[900],
+        "--secondary": rgb[800],
+        "--secondary-foreground": rgb[50],
+        "--muted": rgb[800],
+        "--muted-foreground": rgb[400],
+        "--accent": rgb[800],
+        "--accent-foreground": rgb[50],
+        "--destructive": import_colors.rose[900],
+        "--destructive-foreground": import_colors.rose[100],
+        "--border": rgb[800],
+        "--input": rgb[800],
+        "--ring": rgb[300]
+      }
+    });
+  },
+  {
+    theme: {
+      extend: {
+        colors: {
+          background: "rgb(var(--background))",
+          foreground: "rgb(var(--foreground))",
+          card: {
+            DEFAULT: "rgb(var(--card))",
+            foreground: "rgb(var(--card-foreground))"
+          },
+          popover: {
+            DEFAULT: "rgb(var(--popover))",
+            foreground: "rgb(var(--popover-foreground))"
+          },
+          primary: {
+            DEFAULT: "rgb(var(--primary))",
+            foreground: "rgb(var(--primary-foreground))"
+          },
+          secondary: {
+            DEFAULT: "rgb(var(--secondary))",
+            foreground: "rgb(var(--secondary-foreground))"
+          },
+          muted: {
+            DEFAULT: "rgb(var(--muted))",
+            foreground: "rgb(var(--muted-foreground))"
+          },
+          accent: {
+            DEFAULT: "rgb(var(--accent))",
+            foreground: "rgb(var(--accent-foreground))"
+          },
+          destructive: {
+            DEFAULT: import_colors.rose[900],
+            foreground: import_colors.rose[100]
+          },
+          warning: {
+            DEFAULT: import_colors.yellow[900],
+            foreground: import_colors.yellow[100]
+          },
+          border: "rgb(var(--border))",
+          input: "rgb(var(--input))",
+          ring: "rgb(var(--ring))"
         }
       }
     }
   }
+);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  gunmetalColors,
+  gunmetalShadcn
 });

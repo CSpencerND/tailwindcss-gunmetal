@@ -1,11 +1,11 @@
 {
     "name": "tailwindcss-gunmetal",
     "version": "1.0.2",
-    "description": "",
+    "description": "gunmetal colorscheme for tailwindcss plus shadcn color config",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsup"
+        "build": "tsup && npm version patch"
     },
     "files": [
         "dist"
@@ -13,9 +13,13 @@
     "keywords": [
         "tailwindcss",
         "plugin",
-        "colors"
+        "colors",
+        "shadcn"
     ],
-    "author": "cspencernd",
+    "author": {
+        "name": "Chris Spencer",
+        "email": "cspencernd@gmail.com"
+    },
     "license": "MIT",
     "devDependencies": {
         "@k-vyn/coloralgorithm": "^1.0.0",
