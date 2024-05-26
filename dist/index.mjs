@@ -13,6 +13,19 @@ var hex = {
   900: "#1e222e",
   950: "#10121a"
 };
+var rgb = {
+  50: "216 222 227",
+  100: "190 199 207",
+  200: "165 176 187",
+  300: "142 153 167",
+  400: "120 131 146",
+  500: "100 110 126",
+  600: "80 89 106",
+  700: "62 70 86",
+  800: "46 51 66",
+  900: "30 34 46",
+  950: "16 18 25"
+};
 var theme = {
   light: {
     background: hex[300],
@@ -95,12 +108,12 @@ var colors_default = plugin(
   ({ addBase }) => {
     addBase({
       ":root": {
-        "--background": "theme('colors.gunmetal.200')",
-        "--foreground": "theme('colors.gunmetal.950')"
+        "--background": rgb[100],
+        "--foreground": rgb[950]
       },
       "[data-theme='dark']": {
-        "--background": "theme('colors.gunmetal.950')",
-        "--foreground": "theme('colors.gunmetal.200')"
+        "--background": rgb[950],
+        "--foreground": rgb[100]
       }
     });
   },
@@ -109,8 +122,8 @@ var colors_default = plugin(
       extend: {
         colors: {
           gunmetal: hex,
-          background: "var(--background)",
-          foreground: "var(--foreground)"
+          background: "rgb(var(--background))",
+          foreground: "rgb(var(--foreground))"
         },
         boxShadow: {
           small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
