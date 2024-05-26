@@ -131,12 +131,12 @@ var colors_default = (0, import_plugin.default)(
   ({ addBase }) => {
     addBase({
       ":root": {
-        background: "theme('colors.gunmetal.300')",
-        foreground: "theme('colors.gunmetal.950')"
+        "--background": "theme('colors.gunmetal.200')",
+        "--foreground": "theme('colors.gunmetal.950')"
       },
       "[data-theme='dark']": {
-        background: "theme('colors.gunmetal.950')",
-        foreground: "theme('colors.gunmetal.300')"
+        "--background": "theme('colors.gunmetal.950')",
+        "--foreground": "theme('colors.gunmetal.200')"
       }
     });
   },
@@ -144,7 +144,9 @@ var colors_default = (0, import_plugin.default)(
     theme: {
       extend: {
         colors: {
-          gunmetal: hex
+          gunmetal: hex,
+          background: "var(--background)",
+          foreground: "var(--foreground)"
         },
         boxShadow: {
           small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
