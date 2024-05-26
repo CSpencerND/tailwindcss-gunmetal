@@ -13,83 +13,94 @@ var hex = {
   900: "#1e222e",
   950: "#10121a"
 };
-var rgb = {
-  50: "216 222 227",
-  100: "190 199 207",
-  200: "165 176 187",
-  300: "142 153 167",
-  400: "120 131 146",
-  500: "100 110 126",
-  600: "80 89 106",
-  700: "62 70 86",
-  800: "46 51 66",
-  900: "30 34 46",
-  950: "16 18 25"
-};
-var colors_default = plugin(() => {
-}, {
-  theme: {
-    extend: {
-      colors: {
-        gunmetal: hex
-      },
-      boxShadow: {
-        small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-        medium: "0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-        large: "0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-        dark: "inset 0 0 0 1px rgb(255 255 255 / 0.07)"
-      }
+var theme = {
+  light: {
+    background: hex[300],
+    foreground: hex[950],
+    surface1: {
+      DEFAULT: hex[200],
+      foreground: hex[800]
+    },
+    surface2: {
+      DEFAULT: hex[100],
+      foreground: hex[700]
+    },
+    surface3: {
+      DEFAULT: hex[50],
+      foreground: hex[600]
+    },
+    divider: "rgba(17, 17, 17, 0.14)",
+    focus: "#006FEE",
+    primary: {
+      DEFAULT: "#006FEE",
+      foreground: "#e6f1fe"
+    },
+    secondary: {
+      DEFAULT: "#7828c8",
+      foreground: "#f2eafa"
+    },
+    success: {
+      DEFAULT: "#17c964",
+      foreground: "#e8faf0"
+    },
+    warning: {
+      DEFAULT: "#f5a524",
+      foreground: "#fefce8"
+    },
+    danger: {
+      DEFAULT: "#f31260",
+      foreground: "#fee7ef"
+    }
+  },
+  dark: {
+    background: hex[950],
+    foreground: hex[300],
+    surface1: {
+      DEFAULT: hex[800],
+      foreground: hex[200]
+    },
+    surface2: {
+      DEFAULT: hex[700],
+      foreground: hex[100]
+    },
+    surface3: {
+      DEFAULT: hex[600],
+      foreground: hex[50]
+    },
+    divider: "rgba(255, 255, 255, 0.14)",
+    focus: "#006FEE",
+    primary: {
+      DEFAULT: "#006FEE",
+      foreground: "#e6f1fe"
+    },
+    secondary: {
+      DEFAULT: "#9353d3",
+      foreground: "#f2eafa"
+    },
+    success: {
+      DEFAULT: "#17c964",
+      foreground: "#e8faf0"
+    },
+    warning: {
+      DEFAULT: "#f5a524",
+      foreground: "#fefce8"
+    },
+    danger: {
+      DEFAULT: "#f31260",
+      foreground: "#fee7ef"
     }
   }
-});
-
-// src/shadcn.ts
-import plugin2 from "tailwindcss/plugin";
-import { rose, yellow } from "tailwindcss/colors";
-var shadcn_default = plugin2(
+};
+var colors_default = plugin(
   ({ addBase }) => {
     addBase({
       ":root": {
-        "--background": rgb[950],
-        "--foreground": rgb[50],
-        "--card": rgb[950],
-        "--card-foreground": rgb[50],
-        "--popover": rgb[950],
-        "--popover-foreground": rgb[50],
-        "--primary": rgb[50],
-        "--primary-foreground": rgb[900],
-        "--secondary": rgb[800],
-        "--secondary-foreground": rgb[50],
-        "--muted": rgb[800],
-        "--muted-foreground": rgb[400],
-        "--accent": rgb[800],
-        "--accent-foreground": rgb[50],
-        "--destructive": rose[900],
-        "--destructive-foreground": rose[100],
-        "--border": rgb[800],
-        "--input": rgb[800],
-        "--ring": rgb[300]
+        background: "theme('colors.gunmetal.300')",
+        foreground: "theme('colors.gunmetal.950')"
       },
-      ".dark": {
-        "--background": rgb[950],
-        "--foreground": rgb[50],
-        "--card": rgb[950],
-        "--card-foreground": rgb[50],
-        "--popover": rgb[950],
-        "--popover-foreground": rgb[50],
-        "--primary": rgb[50],
-        "--primary-foreground": rgb[900],
-        "--secondary": rgb[800],
-        "--secondary-foreground": rgb[50],
-        "--muted": rgb[800],
-        "--muted-foreground": rgb[400],
-        "--accent": rgb[800],
-        "--accent-foreground": rgb[50],
-        "--destructive": rose[900],
-        "--destructive-foreground": rose[100],
-        "--border": rgb[800],
-        "--input": rgb[800],
-        "--ring": rgb[300]
+      "[data-theme='dark']": {
+        background: "theme('colors.gunmetal.950')",
+        foreground: "theme('colors.gunmetal.300')"
       }
     });
   },
@@ -97,51 +108,18 @@ var shadcn_default = plugin2(
     theme: {
       extend: {
         colors: {
-          background: "rgb(var(--background))",
-          foreground: "rgb(var(--foreground))",
-          card: {
-            DEFAULT: "rgb(var(--card))",
-            foreground: "rgb(var(--card-foreground))"
-          },
-          popover: {
-            DEFAULT: "rgb(var(--popover))",
-            foreground: "rgb(var(--popover-foreground))"
-          },
-          primary: {
-            DEFAULT: "rgb(var(--primary))",
-            foreground: "rgb(var(--primary-foreground))"
-          },
-          secondary: {
-            DEFAULT: "rgb(var(--secondary))",
-            foreground: "rgb(var(--secondary-foreground))"
-          },
-          muted: {
-            DEFAULT: "rgb(var(--muted))",
-            foreground: "rgb(var(--muted-foreground))"
-          },
-          accent: {
-            DEFAULT: "rgb(var(--accent))",
-            foreground: "rgb(var(--accent-foreground))"
-          },
-          destructive: {
-            DEFAULT: rose[900],
-            foreground: rose[100]
-          },
-          warning: {
-            DEFAULT: yellow[900],
-            foreground: yellow[100]
-          },
-          border: "rgb(var(--border))",
-          input: "rgb(var(--input))",
-          ring: "rgb(var(--ring))"
+          gunmetal: hex
+        },
+        boxShadow: {
+          small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
+          medium: "0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
+          large: "0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
+          dark: "inset 0 0 0 1px rgb(255 255 255 / 0.07)"
         }
       }
     }
   }
 );
 export {
-  colors_default as gunmetalColors,
-  hex as gunmetalHex,
-  rgb as gunmetalRgb,
-  shadcn_default as gunmetalShadcn
+  colors_default as default
 };

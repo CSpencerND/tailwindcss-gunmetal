@@ -28,18 +28,130 @@ export const rgb = {
     950: "16 18 25",
 };
 
-export default plugin(() => { }, {
-    theme: {
-        extend: {
-            colors: {
-                gunmetal: hex,
-            },
-            boxShadow: {
-                small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-                medium: "0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-                large: "0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-                dark: "inset 0 0 0 1px rgb(255 255 255 / 0.07)",
-            },
+export const theme = {
+    light: {
+        background: hex[300],
+        foreground: hex[950],
+
+        surface1: {
+            DEFAULT: hex[200],
+            foreground: hex[800],
+        },
+
+        surface2: {
+            DEFAULT: hex[100],
+            foreground: hex[700],
+        },
+
+        surface3: {
+            DEFAULT: hex[50],
+            foreground: hex[600],
+        },
+
+        divider: "rgba(17, 17, 17, 0.14)",
+        focus: "#006FEE",
+
+        primary: {
+            DEFAULT: "#006FEE",
+            foreground: "#e6f1fe",
+        },
+
+        secondary: {
+            DEFAULT: "#7828c8",
+            foreground: "#f2eafa",
+        },
+
+        success: {
+            DEFAULT: "#17c964",
+            foreground: "#e8faf0",
+        },
+
+        warning: {
+            DEFAULT: "#f5a524",
+            foreground: "#fefce8",
+        },
+
+        danger: {
+            DEFAULT: "#f31260",
+            foreground: "#fee7ef",
         },
     },
-});
+
+    dark: {
+        background: hex[950],
+        foreground: hex[300],
+
+        surface1: {
+            DEFAULT: hex[800],
+            foreground: hex[200],
+        },
+
+        surface2: {
+            DEFAULT: hex[700],
+            foreground: hex[100],
+        },
+
+        surface3: {
+            DEFAULT: hex[600],
+            foreground: hex[50],
+        },
+
+        divider: "rgba(255, 255, 255, 0.14)",
+        focus: "#006FEE",
+
+        primary: {
+            DEFAULT: "#006FEE",
+            foreground: "#e6f1fe",
+        },
+
+        secondary: {
+            DEFAULT: "#9353d3",
+            foreground: "#f2eafa",
+        },
+
+        success: {
+            DEFAULT: "#17c964",
+            foreground: "#e8faf0",
+        },
+
+        warning: {
+            DEFAULT: "#f5a524",
+            foreground: "#fefce8",
+        },
+
+        danger: {
+            DEFAULT: "#f31260",
+            foreground: "#fee7ef",
+        },
+    },
+};
+
+export default plugin(
+    ({ addBase }) => {
+        addBase({
+            ":root": {
+                background: "theme('colors.gunmetal.300')",
+                foreground: "theme('colors.gunmetal.950')",
+            },
+            "[data-theme='dark']": {
+                background: "theme('colors.gunmetal.950')",
+                foreground: "theme('colors.gunmetal.300')",
+            },
+        });
+    },
+    {
+        theme: {
+            extend: {
+                colors: {
+                    gunmetal: hex,
+                },
+                boxShadow: {
+                    small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
+                    medium: "0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
+                    large: "0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
+                    dark: "inset 0 0 0 1px rgb(255 255 255 / 0.07)",
+                },
+            },
+        },
+    }
+);

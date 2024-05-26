@@ -1,7 +1,7 @@
 import plugin from "tailwindcss/plugin";
 
 import { rose, yellow } from "tailwindcss/colors";
-import { hex, rgb } from "./colors";
+import { rgb } from "./colors";
 
 export default plugin(
     ({ addBase }) => {
@@ -54,37 +54,37 @@ export default plugin(
         theme: {
             extend: {
                 colors: {
-                    background: hex[950],
-                    foreground: hex[50],
+                    background: "rgb(var(--background))",
+                    foreground: "rgb(var(--foreground))",
 
                     card: {
-                        DEFAULT: hex[950],
-                        foreground: hex[50],
+                        DEFAULT: "rgb(var(--card))",
+                        foreground: "rgb(var(--card-foreground))",
                     },
 
                     popover: {
-                        DEFAULT: hex[950],
-                        foreground: hex[50],
+                        DEFAULT: "rgb(var(--popover))",
+                        foreground: "rgb(var(--popover-foreground))",
                     },
 
                     primary: {
-                        DEFAULT: hex[50],
-                        foreground: hex[900],
+                        DEFAULT: "rgb(var(--primary))",
+                        foreground: "rgb(var(--primary-foreground))",
                     },
 
                     secondary: {
-                        DEFAULT: hex[800],
-                        foreground: hex[50],
+                        DEFAULT: "rgb(var(--secondary))",
+                        foreground: "rgb(var(--secondary-foreground))",
                     },
 
                     muted: {
-                        DEFAULT: hex[800],
-                        foreground: hex[400],
+                        DEFAULT: "rgb(var(--muted))",
+                        foreground: "rgb(var(--muted-foreground))",
                     },
 
                     accent: {
-                        DEFAULT: hex[800],
-                        foreground: hex[50],
+                        DEFAULT: "rgb(var(--accent))",
+                        foreground: "rgb(var(--accent-foreground))",
                     },
 
                     destructive: {
@@ -97,9 +97,9 @@ export default plugin(
                         foreground: yellow[100],
                     },
 
-                    border: hex[800],
-                    input: hex[800],
-                    ring: hex[300],
+                    border: "rgb(var(--border))",
+                    input: "rgb(var(--input))",
+                    ring: "rgb(var(--ring))",
                 },
             },
         },
