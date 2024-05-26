@@ -3,25 +3,25 @@
         "properties": {
             "steps": 11,
             "hue": {
-                "start": 207,
-                "end": 227,
+                "start": 208,
+                "end": 228,
                 "curve": "linear"
             },
             "saturation": {
-                "start": 0.05,
-                "end": 0.37,
+                "start": 0.02,
+                "end": 0.5,
                 "rate": 1,
-                "curve": "linear"
+                "curve": "easeInQuad"
             },
             "brightness": {
-                "start": 0.89,
-                "end": 0.1,
-                "curve": "linear"
+                "start": 0.99,
+                "end": 0.09,
+                "curve": "easeInOutQuad"
             }
         },
         "options": {
             "minorSteps": [],
-            "name": "gunmetal",
+            "name": "graphite",
             "provideInverted": true,
             "rotation": "clockwise"
         }

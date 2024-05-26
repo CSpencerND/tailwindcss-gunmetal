@@ -1,159 +1,60 @@
-import plugin from "tailwindcss/plugin";
+// https://colorbox.io/?c0=%26p%24s%24%3D11%26p%24h%24st%24%3D208%26p%24h%24e%24%3D228%26p%24h%24c%24%3Dl%26p%24sa%24st%24%3D0.02%26p%24sa%24e%24%3D0.5%26p%24sa%24r%24%3D1%26p%24sa%24c%24%3Deqi%26p%24b%24st%24%3D0.99%26p%24b%24e%24%3D0.09%26p%24b%24c%24%3Deqio%26o%24n%24%3Dgraphite%26o%24ms%24%3D%5B%5D%26o%24ro%24%3Dcw%26o%24pi%24%3Dt
 
-export const hex = {
-    50: "#d8dee3",
-    100: "#bec7cf",
-    200: "#a5b0bb",
-    300: "#8e99a7",
-    400: "#788392",
-    500: "#646e7e",
-    600: "#50596a",
-    700: "#3e4656",
-    800: "#2e3342",
-    900: "#1e222e",
-    950: "#10121a",
-};
-
-export const rgb = {
-    50: "216 222 227",
-    100: "190 199 207",
-    200: "165 176 187",
-    300: "142 153 167",
-    400: "120 131 146",
-    500: "100 110 126",
-    600: "80 89 106",
-    700: "62 70 86",
-    800: "46 51 66",
-    900: "30 34 46",
-    950: "16 18 25",
-};
-
-export const theme = {
-    light: {
-        background: hex[300],
-        foreground: hex[950],
-
-        surface1: {
-            DEFAULT: hex[200],
-            foreground: hex[800],
-        },
-
-        surface2: {
-            DEFAULT: hex[100],
-            foreground: hex[700],
-        },
-
-        surface3: {
-            DEFAULT: hex[50],
-            foreground: hex[600],
-        },
-
-        divider: "rgba(17, 17, 17, 0.14)",
-        focus: "#006FEE",
-
-        primary: {
-            DEFAULT: "#006FEE",
-            foreground: "#e6f1fe",
-        },
-
-        secondary: {
-            DEFAULT: "#7828c8",
-            foreground: "#f2eafa",
-        },
-
-        success: {
-            DEFAULT: "#17c964",
-            foreground: "#e8faf0",
-        },
-
-        warning: {
-            DEFAULT: "#f5a524",
-            foreground: "#fefce8",
-        },
-
-        danger: {
-            DEFAULT: "#f31260",
-            foreground: "#fee7ef",
-        },
+export const graphite = {
+    hex: {
+        50: "#F7FAFC",
+        100: "#F0F4F9",
+        200: "#E3E9F1",
+        300: "#CFD6E1",
+        400: "#A1A9B5",
+        500: "#757C89",
+        600: "#515765",
+        700: "#383E4D",
+        800: "#1F232F",
+        900: "#131621",
+        // 900: "#141722",
+        950: "#070910",
     },
-
-    dark: {
-        background: hex[950],
-        foreground: hex[300],
-
-        surface1: {
-            DEFAULT: hex[800],
-            foreground: hex[200],
-        },
-
-        surface2: {
-            DEFAULT: hex[700],
-            foreground: hex[100],
-        },
-
-        surface3: {
-            DEFAULT: hex[600],
-            foreground: hex[50],
-        },
-
-        divider: "rgba(255, 255, 255, 0.14)",
-        focus: "#006FEE",
-
-        primary: {
-            DEFAULT: "#006FEE",
-            foreground: "#e6f1fe",
-        },
-
-        secondary: {
-            DEFAULT: "#9353d3",
-            foreground: "#f2eafa",
-        },
-
-        success: {
-            DEFAULT: "#17c964",
-            foreground: "#e8faf0",
-        },
-
-        warning: {
-            DEFAULT: "#f5a524",
-            foreground: "#fefce8",
-        },
-
-        danger: {
-            DEFAULT: "#f31260",
-            foreground: "#fee7ef",
-        },
+    rgb: {
+        50: "247 250 252",
+        100: "240 244 249",
+        200: "227 233 241",
+        300: "207 214 225",
+        400: "161 169 181",
+        500: "117 124 137",
+        600: "81 87 101",
+        700: "56 62 77",
+        800: "31 35 47",
+        900: "19 22 33",
+        // 900: "20 23 34",
+        950: "7 9 16",
     },
 };
 
-export default plugin(
-    ({ addBase }) => {
-        addBase({
-            ":root": {
-                "--background": rgb[100],
-                "--foreground": rgb[950],
-            },
-            "[data-theme='dark']": {
-                "--background": rgb[950],
-                "--foreground": rgb[100],
-            },
-        });
-    },
-    {
-        theme: {
-            extend: {
-                colors: {
-                    gunmetal: hex,
-                    background: "rgb(var(--background))",
-                    foreground: "rgb(var(--foreground))",
-                },
-                boxShadow: {
-                    small: "0px 0px 5px 0px rgb(0 0 0 / 0.02), 0px 2px 10px 0px rgb(0 0 0 / 0.06), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-                    medium: "0px 0px 15px 0px rgb(0 0 0 / 0.03), 0px 2px 30px 0px rgb(0 0 0 / 0.08), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-                    large: "0px 0px 30px 0px rgb(0 0 0 / 0.04), 0px 30px 60px 0px rgb(0 0 0 / 0.12), 0px 0px 1px 0px rgb(0 0 0 / 0.3), inset 0 0 0 1px rgb(0 0 0 / 0.14)",
-                    dark: "inset 0 0 0 1px rgb(255 255 255 / 0.07)",
-                },
-            },
-        },
-    }
-);
+// export const hex = {
+//     50: "#d8dee3",
+//     100: "#bec7cf",
+//     200: "#a5b0bb",
+//     300: "#8e99a7",
+//     400: "#788392",
+//     500: "#646e7e",
+//     600: "#50596a",
+//     700: "#3e4656",
+//     800: "#2e3342",
+//     900: "#1e222e",
+//     950: "#10121a",
+// };
+
+// export const rgb = {
+//     50: "216 222 227",
+//     100: "190 199 207",
+//     200: "165 176 187",
+//     300: "142 153 167",
+//     400: "120 131 146",
+//     500: "100 110 126",
+//     600: "80 89 106",
+//     700: "62 70 86",
+//     800: "46 51 66",
+//     900: "30 34 46",
+//     950: "16 18 25",
+// };
